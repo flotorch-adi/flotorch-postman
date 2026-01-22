@@ -1,0 +1,1233 @@
+{
+	"info": {
+		"_postman_id": "48033962-4faca7ff-e341-4743-8e9e-0fc4fdcf78b1",
+		"name": "FloTorch 🔥",
+		"description": "Interact with your FloTorch resources through our robust API.\n\nFind more information here:\n\n[Quickstart Docs](https://flotorch-docs.fissionlabs.workers.dev/) 🚀",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Models",
+			"item": [
+				{
+					"name": "Chat Completion",
+					"id": "48033962-5b1d278b-0f33-4fdf-b329-396cd31217a0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"model\": \"flotorch/model\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"What is the capital of Norway?\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/openai/v1/chat/completions",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"openai",
+								"v1",
+								"chat",
+								"completions"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "48033962-6a457bee-d81a-4d46-993e-c4feec899c34",
+							"name": "Adi's Workspace: default",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"model\": \"flotorch/default\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"What is the capital of Norway?\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{flotorch_base_url}}/api/openai/v1/chat/completions",
+									"host": [
+										"{{flotorch_base_url}}"
+									],
+									"path": [
+										"api",
+										"openai",
+										"v1",
+										"chat",
+										"completions"
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"responseTime": null,
+							"body": ""
+						},
+						{
+							"id": "48033962-99cf771c-7138-4f23-9eb9-7de18924f5ca",
+							"name": "insurance-dev: insurance-llm",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"model\": \"flotorch/insurance-llm\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"What is the capital of Norway?\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{flotorch_base_url}}/api/openai/v1/chat/completions",
+									"host": [
+										"{{flotorch_base_url}}"
+									],
+									"path": [
+										"api",
+										"openai",
+										"v1",
+										"chat",
+										"completions"
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Generate Embeddings",
+					"id": "48033962-cd64912f-5ea6-4fb9-9a20-98df5aabb9f6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"model\": \"flotorch/titan-embedding\",\n  \"input\": \"Quick brown fox jumped over a lazy dog.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/openai/v1/embeddings",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"openai",
+								"v1",
+								"embeddings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vector Store Search",
+					"id": "48033962-0a35744f-518d-4315-8e64-75c3ecbdbf84",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": \"search query\",\n  \"top_k\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/openai/v1/vector_stores/:id/search",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"openai",
+								"v1",
+								"vector_stores",
+								":id",
+								"search"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "48033962-a2cafa4b-c570-420a-a4a4-1d759f8e83f4"
+		},
+		{
+			"name": "Agents",
+			"item": [
+				{
+					"name": "Get Agent Details",
+					"id": "48033962-47f971e3-e650-4c1e-8ded-4f69c0d63fc6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/agents/:name",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"agents",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "48033962-6a4ea0fd-660f-4064-b275-46a17c36dd8d"
+		},
+		{
+			"name": "Memory",
+			"item": [
+				{
+					"name": "List Memories",
+					"id": "48033962-f558f670-62c8-49a0-944c-977356e038dc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": \"123\",\n  \"limit\": 10,\n  \"offset\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/memory/:provider/memories/list",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"memory",
+								":provider",
+								"memories",
+								"list"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": "openai"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Memory",
+					"id": "48033962-92950c07-864b-4c68-a20d-1c2cfbdf0736",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"content\": \"Memory content\",\n  \"metadata\": {\n    \"key\": \"value\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/memory/:provider/memories",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"memory",
+								":provider",
+								"memories"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Memory",
+					"id": "48033962-8aed0fa3-7d29-4844-9f7c-f43ac4fc71f5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}api/v1/memory/:provider/memories/:id",
+							"host": [
+								"{{flotorch_base_url}}api"
+							],
+							"path": [
+								"v1",
+								"memory",
+								":provider",
+								"memories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": ""
+								},
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Memory",
+					"id": "48033962-2861beff-5979-42c8-8fde-9844c3899ef7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"content\": \"Updated memory content\",\n  \"metadata\": {\n    \"key\": \"updated_value\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/memory/:provider/memories/:id",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"memory",
+								":provider",
+								"memories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": ""
+								},
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Memory",
+					"id": "48033962-9d01b13f-5cb6-4566-ac8d-20d3768ce9ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/memory/:provider/memories/:id",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"memory",
+								":provider",
+								"memories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": ""
+								},
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Memories",
+					"id": "48033962-7cc0d770-5b6b-4d6e-82a4-e124f3de40f0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": \"search term\",\n  \"limit\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/memory/:provider/memories/search",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"memory",
+								":provider",
+								"memories",
+								"search"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "48033962-68307db8-3630-4114-8aa1-4e7ac8671a32"
+		},
+		{
+			"name": "RAG",
+			"item": [
+				{
+					"name": "Generate with RAG",
+					"id": "48033962-dc3b3349-fdda-4043-8c0a-e7158ebe052b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": \"Your question\",\n  \"context\": \"Additional context\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/rag/:endpoint/generate",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"rag",
+								":endpoint",
+								"generate"
+							],
+							"variable": [
+								{
+									"key": "endpoint",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "48033962-f420210a-4979-4e04-b1d5-33b4bc36ced5",
+							"name": "Adi's Workspace: icd-rag",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"query\": \"choldera\",\n  \"context\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{flotorch_base_url}}/api/v1/rag/:endpoint/generate",
+									"host": [
+										"{{flotorch_base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"rag",
+										":endpoint",
+										"generate"
+									],
+									"variable": [
+										{
+											"key": "endpoint",
+											"value": "icd-rag"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "48033962-9c35f3a8-3cc7-4ed5-99ca-144138502dc7"
+		},
+		{
+			"name": "MCP Tools",
+			"item": [
+				{
+					"name": "Execute MCP Operations",
+					"id": "48033962-b2466b53-9d44-4d4d-80ed-c1958cd7115e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"operation\": \"tools/list\",\n  \"params\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/mcps/:name/proxy",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"mcps",
+								":name",
+								"proxy"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "48033962-b421f6ca-b075-4b2c-adbb-08848f729b20"
+		},
+		{
+			"name": "Sessions",
+			"item": [
+				{
+					"name": "List Sessions",
+					"id": "48033962-50b095ff-bb05-4590-9afb-2b831a51707b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Session",
+					"id": "48033962-94730ab2-702d-432b-90a7-1ab92270deb8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"My Session\",\n    \"appName\": \"app name\",\n    \"userId\": \"user ID\",\n    \"metadata\": {\n        \"key\": \"value\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "48033962-5a659d5e-fb7f-4bb9-9e3f-ece0361eca2e",
+							"name": "n8n",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"My Session\",\n    \"appName\": \"flotorch\",\n    \"userId\": \"unknown\",\n    \"metadata\": {\n        \"key\": \"value\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{flotorch_base_url}}/api/v1/sessions",
+									"host": [
+										"{{flotorch_base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sessions"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get Session Details",
+					"id": "48033962-eb1f7674-f207-44ff-ba50-7127c8133e9c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "48033962-02c4e635-fa4f-4cc4-9389-66c164cf0e79",
+							"name": "n8n",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid",
+									"host": [
+										"{{flotorch_base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sessions",
+										":uid"
+									],
+									"variable": [
+										{
+											"key": "uid",
+											"value": "019a5bde-6373-772a-9321-11c3b77d535c"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Delete Session",
+					"id": "48033962-8503abd9-dbd6-4885-a3c8-68bea0168f2d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Session Events",
+					"id": "48033962-4a71cb14-6c10-429d-a23b-93b03886aad1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid/events",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								":uid",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "48033962-e7e03edb-1c23-4636-a1e9-58b1976e87ff",
+							"name": "Adi's Workspace: medical-coder",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid/events",
+									"host": [
+										"{{flotorch_base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sessions",
+										":uid",
+										"events"
+									],
+									"variable": [
+										{
+											"key": "uid",
+											"value": "0199f038-d6b6-7389-b298-195afa41d2af"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						},
+						{
+							"id": "48033962-f3f87bbc-bb86-48dc-b58f-38cb68f29c36",
+							"name": "n8n",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid/events",
+									"host": [
+										"{{flotorch_base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sessions",
+										":uid",
+										"events"
+									],
+									"variable": [
+										{
+											"key": "uid",
+											"value": "0199f038-d6b6-7389-b298-195afa41d2af"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Add Session Event",
+					"id": "48033962-901e36b0-5700-4d28-b43e-9d2b5e7270f2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"user_message\",\n  \"data\": {\n    \"message\": \"Hello\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid/events",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								":uid",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "48033962-f6585937-4070-4f11-a9bc-786bd2655ff4",
+							"name": "n8n",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \"user_message\",\n  \"author\": \"author\",\n  \"invocationId\": \"1234567890\",\n  \"data\": {\n    \"message\": \"Hello\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid/events",
+									"host": [
+										"{{flotorch_base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sessions",
+										":uid",
+										"events"
+									],
+									"variable": [
+										{
+											"key": "uid",
+											"value": "019a5bde-6373-772a-9321-11c3b77d535c"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				}
+			],
+			"id": "48033962-6da6ed12-7c52-450b-8060-5b2600ef3bd3"
+		},
+		{
+			"name": "Workflows",
+			"item": [
+				{
+					"name": "Fetch Workflow Configuration",
+					"id": "48033962-a9ce0fa8-b097-4c16-a79d-5d8c890f486b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/v1/workflows/:name",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"v1",
+								"workflows",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Workflow",
+					"id": "48033962-e9637428-7b9c-4a00-94f5-78ac953ebe67",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"input\": \"<string or json>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/v1/workflows/:name/run",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"v1",
+								"workflows",
+								":name",
+								"run"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "48033962-3c165cdf-0ab4-4985-8236-2a2b42f8b345",
+							"name": "Adi's Workspace: medical-coder",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"input\": \"high cholesterol\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{flotorch_base_url}}/v1/workflows/:name/run",
+									"host": [
+										"{{flotorch_base_url}}"
+									],
+									"path": [
+										"v1",
+										"workflows",
+										":name",
+										"run"
+									],
+									"variable": [
+										{
+											"key": "name",
+											"value": "medical-coder"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Get Workflow Invocation Details",
+					"id": "48033962-a6196b78-cdf4-49ea-ae27-bcb9a2212b6d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/v1/workflows/:name/invocations/:invocation",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"v1",
+								"workflows",
+								":name",
+								"invocations",
+								":invocation"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "invocation",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "48033962-463e3ab3-de95-41c5-805d-7756f8ef769a",
+							"name": "Adi's Workspace: medical-coder",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{flotorch_base_url}}/v1/workflows/:name/invocations/:invocation",
+									"host": [
+										"{{flotorch_base_url}}"
+									],
+									"path": [
+										"v1",
+										"workflows",
+										":name",
+										"invocations",
+										":invocation"
+									],
+									"variable": [
+										{
+											"key": "name",
+											"value": "medical-coder"
+										},
+										{
+											"key": "invocation",
+											"value": "0199f038-d6b6-7389-b298-195afa41d2af"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "48033962-1d31c638-70d6-49d7-b47d-07bc7f194b1f"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{flotorch_api_key}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "35afecdc-776f-4071-a43e-9839f918a521",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6cc1cde4-61ff-4b70-8bba-59507cb7459b",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
